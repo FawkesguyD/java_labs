@@ -1,4 +1,4 @@
-package org.example;
+package org.example.lab1;
 
 import java.math.BigInteger;
 import java.util.Scanner;
