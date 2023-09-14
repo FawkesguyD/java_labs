@@ -9,7 +9,7 @@ public class ex5 {
         BigInteger multiplication = new BigInteger("1");
         for (int i = 1; i <= n; i++) {
             multiplication = multiplication.multiply(BigInteger.valueOf(i));
-            System.out.println(multiplication);
+
         }
         System.out.println("result - " + multiplication);
     }

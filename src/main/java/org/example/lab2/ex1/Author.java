@@ -1,4 +1,4 @@
-package org.example.lab2;
+package org.example.lab2.ex1;
 
 import java.util.Scanner;
 
@@ -27,8 +27,12 @@ public class Author {
         return gender;
     }
 
+    @Override
     public String toString() {
-        return super.toString();
+        return "Author{" +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", gender=" + gender +
+                '}';
     }
-
 }
