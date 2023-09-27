@@ -70,7 +70,16 @@ public class Shop {
         shop.AddItem("intel", 120000, Category.PC);
         shop.AddItem("teapod", 1000, Category.House);
         shop.AddItem("tend", 4000, Category.Outside);
-
+        shop.AddItem("keyboard", 5000, Category.PC);
+        shop.AddItem("mouse", 2500, Category.PC);
+        shop.AddItem("couch", 15000, Category.House);
+        shop.AddItem("grill", 6000, Category.Outside);
+        shop.AddItem("monitor", 8000, Category.PC);
+        shop.AddItem("desk", 6000, Category.PC);
+        shop.AddItem("lamp", 2000, Category.House);
+        shop.AddItem("tent", 3000, Category.Outside);
+        shop.AddItem("headphones", 4000, Category.PC);
+        shop.AddItem("chair", 5000, Category.PC);
 
         boolean flag = false;
         while(!flag) {
@@ -96,6 +105,8 @@ public class Shop {
                 }
                 case 3: {
                     Scanner scanner = new Scanner(System.in);
+
+                    System.out.print("enter name of category: ");
                     String userInput = scanner.nextLine();
 
                     try {
@@ -109,6 +120,7 @@ public class Shop {
                 }
                 case 4: {
                     Scanner scanner = new Scanner(System.in);
+                    System.out.println("enter name of product to add to the garbage: ");
                     String item = scanner.nextLine();
 
                     shop.AddTogarbage(item);
