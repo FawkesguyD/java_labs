@@ -79,12 +79,13 @@ public class Shop {
 
         boolean flag = false;
         while(!flag) {
-            System.out.println(
+            System.out.print(
                     "Authorization     | 1\n" +
                     "Catalog           | 2\n" +
                     "Items             | 3\n" +
                     "AddToGarbage      | 4\n" +
-                    "Buy               | 5\n");
+                    "Buy               | 5\n" +
+                    "exit (6)\n");
 
             System.out.print("enter action: ");
             int action = in.nextInt();
@@ -132,6 +133,10 @@ public class Shop {
                     shop.ViewGarbage();
 
                     System.out.println();
+                    break;
+                }
+                case 6: {
+                    flag = true;
                     break;
                 }
                 default:
