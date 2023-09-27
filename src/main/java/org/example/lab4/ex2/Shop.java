@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Shop {
     private String login;
-    private int passwd;
+    private String passwd;
 
     enum Category {
         PC,
@@ -18,16 +18,16 @@ public class Shop {
     }
 
     // для корзины
-    ArrayList<Range> garbage = new ArrayList<>();
+    ArrayList<Item> garbage = new ArrayList<>();
     // для всех товаров в магазине
-    ArrayList<Range> goods = new ArrayList<>();
+    ArrayList<Item> goods = new ArrayList<>();
 
     void autorization() {
         Scanner in = new Scanner(System.in);
-        System.out.print("login: ");
+        System.out.print("login(everything): ");
         this.login = in.nextLine();
-        System.out.print("password: ");
-        this.passwd = in.nextInt();
+        System.out.print("password(just digits): ");
+        this.passwd = in.nextLine();
     }
 
     void buying() {
@@ -35,11 +35,11 @@ public class Shop {
     }
 
     void AddItem(String name, Integer price, Category category) {
-        goods.add(new Range(name, price, category));
+        goods.add(new Item(name, price, category));
     }
 
     void AddTogarbage(String name) {
-        for (Range item: goods) {
+        for (Item item: goods) {
             if (Objects.equals(item.getName(), name)) {
                 garbage.add(item);
             }
@@ -47,12 +47,12 @@ public class Shop {
     }
 
     void ViewGarbage() {
-        for (Range item: garbage) {
+        for (Item item: garbage) {
             System.out.println(item);
         }
     }
     void ViewByCategory(Category category) {
-        for (Range item: goods) {
+        for (Item item: goods) {
             if (Objects.equals(item.getCategory(), category)) {
                 System.out.println(item);
             }
@@ -66,10 +66,6 @@ public class Shop {
         Scanner in = new Scanner(System.in);
         Shop shop = new Shop();
 
-        shop.AddItem("amd", 90000, Category.PC);
-        shop.AddItem("intel", 120000, Category.PC);
-        shop.AddItem("teapod", 1000, Category.House);
-        shop.AddItem("tend", 4000, Category.Outside);
         shop.AddItem("keyboard", 5000, Category.PC);
         shop.AddItem("mouse", 2500, Category.PC);
         shop.AddItem("couch", 15000, Category.House);
@@ -84,11 +80,11 @@ public class Shop {
         boolean flag = false;
         while(!flag) {
             System.out.println(
-                    "auntification     | 1\n" +
-                    "view of catalogue | 2\n" +
-                    "view goods        | 3\n" +
-                    "add to garbage    | 4\n" +
-                    "buy               | 5\n");
+                    "Authorization     | 1\n" +
+                    "Catalog           | 2\n" +
+                    "Items             | 3\n" +
+                    "AddToGarbage      | 4\n" +
+                    "Buy               | 5\n");
 
             System.out.print("enter action: ");
             int action = in.nextInt();

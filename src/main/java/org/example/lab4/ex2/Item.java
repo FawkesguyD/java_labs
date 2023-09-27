@@ -1,12 +1,12 @@
 package org.example.lab4.ex2;
 
-public class Range {
+public class Item {
     private String name;
     private Integer price;
 
     private Shop.Category category;
 
-    Range(String name, Integer price, Shop.Category category) {
+    Item(String name, Integer price, Shop.Category category) {
         this.name = name;
         this.price = price;
         this.category = category;
@@ -22,7 +22,7 @@ public class Range {
 
     @Override
     public String toString() {
-        return "name='" + name + '\'' +
-                ", price=" + price;
+        return  name +
+                ", price(" + price + "rub)";
     }
 }
