@@ -53,7 +53,7 @@ public class Phone {
 
         // Отправляем сообщение
         System.out.println();
-        John.sendMessage("111-222-3333", "444-555-6666");
+        John.sendMessage("111-222-3333", "444-555-6666", "4534534");
     }
 
 }

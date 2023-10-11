@@ -1,47 +1,58 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-public class Main implements ActionListener{
-    int clicks = 0;
-    private JLabel label;
-    private JButton button;
-    private JPanel panel;
-    public Main() {
-        JFrame frame = new JFrame("My app");
-        frame.setSize(1024, 720);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+public class Main extends JFrame {
+    JButton madridButton = new JButton("Real Madrid");
+    JButton milanButton = new JButton("AC Milan");
+    static int milanScore = 0;
+    static int madridScore = 0;
+    static String lastScorerTeam = "N/A";
+    static String winner = "DRAW";
 
-        button = new JButton("button");
-        button.addActionListener(this);
+    Main(){
 
-        label = new JLabel("Number of clicks: 0");
-        panel = new JPanel();
+        super("Футбольчик");
 
-        panel.add(button);
-        panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 10));
-        panel.setLayout(new GridLayout(0, 1));
-        panel.add(label);
-
-        frame.add(panel, BorderLayout.CENTER);
-        frame.pack();
-        frame.setVisible(true);
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                new Main();
-
+        JLabel resultLabel = new JLabel("Result: " + madridScore +" X " + milanScore );
+        JLabel winnerLabel = new JLabel("Winner: " + winner);
+        JLabel lastScorerLabel = new JLabel("Last Scorer: " + lastScorerTeam);
+        madridButton.addActionListener(e -> {
+            madridScore++;
+            lastScorerTeam = "Real Madrid";
+            resultLabel.setText("Result: " + madridScore + " X " + milanScore );
+            lastScorerLabel.setText("Last Scorer: " + lastScorerTeam);
+            if(madridScore > milanScore){
+                winner = "Real Madrid";
+                winnerLabel.setText("Winner: " + winner);
+            } else if(milanScore == madridScore) {
+                winner = "DRAW";
+                winnerLabel.setText("Winner: " + winner);
             }
         });
-    }
+        milanButton.addActionListener(e -> {
+            milanScore++;
+            lastScorerTeam = "AC Milan";
+            resultLabel.setText("Result: " + madridScore + " X " + milanScore);
+            lastScorerLabel.setText("Last Scorer: " + lastScorerTeam);
+            if(milanScore > madridScore){
+                winner = "AC Milan";
+                winnerLabel.setText("Winner: " + winner);
+            } else if(milanScore == madridScore) {
+                winner = "DRAW";
+                winnerLabel.setText("Winner: " + winner);
+            }
+        });
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        clicks++;
-        label.setText("Number of clicks: " + clicks);
+        resultLabel.setHorizontalAlignment(0);
+        add(madridButton,BorderLayout.PAGE_START);
+        add(resultLabel,BorderLayout.CENTER);
+        add(milanButton,BorderLayout.PAGE_END);
+        add(lastScorerLabel,BorderLayout.LINE_END);
+        add(winnerLabel,BorderLayout.LINE_START);
+        setSize(600,600);
+        setVisible(true);
+    }
+    public static void main(String[] args) {
+        new Main();
     }
 }
-

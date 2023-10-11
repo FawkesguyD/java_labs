@@ -3,7 +3,6 @@ package org.example.lab4.ex2;
 public class Item {
     private String name;
     private Integer price;
-
     private Shop.Category category;
 
     Item(String name, Integer price, Shop.Category category) {

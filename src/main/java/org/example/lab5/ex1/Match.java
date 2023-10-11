@@ -1,12 +1,18 @@
 package org.example.lab5.ex1;
 
 import javax.swing.*;
+import javax.swing.plaf.ButtonUI;
+import javax.swing.plaf.LabelUI;
+import javax.swing.plaf.metal.MetalButtonUI;
+import javax.swing.plaf.metal.MetalLabelUI;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.format.TextStyle;
 
 public class Match implements ActionListener {
-    private JPanel panel;
+    private JPanel panelInfo;
+    private JPanel panelButtons;
     private JFrame frame;
     private JButton Milan;
     private JButton Real;
@@ -17,30 +23,49 @@ public class Match implements ActionListener {
     int scoreOfReal = 0;
     public Match() {
 
-        //начальная настройка
+        //настройка фрейма
         frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 500);
         frame.setVisible(true);
         frame.setTitle("Match");
-        frame.setLayout(new GridLayout(2,3));
+        frame.setLayout(new GridLayout(2,1));
+        frame.setBackground(Color.darkGray);
 
-        //инициализация элементов
+        //настройка элементов
         Milan = new JButton("AC Milan");
         Real = new JButton("Real Madrid");
         result = new JLabel("0 X 0");
         last = new JLabel("Last Scorer: N/A");
         winner = new JLabel("Winner DRAW");
-        panel = new JPanel();
-        panel.setLayout(new GridLayout(3, 1));
+        panelInfo = new JPanel();
+        panelButtons = new JPanel(new GridLayout(1, 2));
+        panelInfo.setLayout(new GridLayout(3, 1));
 
-        //добавление элементов на фрейм
-        frame.add(Milan);
-        frame.add(Real);
-        frame.add(panel);
-        panel.add(result);
-        panel.add(last);
-        panel.add(winner);
+        //добавление элементов
+        frame.add(panelInfo);
+        frame.add(panelButtons);
+        panelButtons.add(Milan);
+        panelButtons.add(Real);
+        panelInfo.add(result);
+        panelInfo.add(last);
+        panelInfo.add(winner);
+
+        //установка положения
+        result.setHorizontalAlignment(JLabel.CENTER);
+        last.setHorizontalAlignment(JLabel.CENTER);
+        winner.setHorizontalAlignment(JLabel.CENTER);
+
+        //темная тема
+        panelInfo.setBackground(Color.DARK_GRAY);
+        panelButtons.setBackground(Color.DARK_GRAY);
+        result.setForeground(Color.WHITE);
+        result.setFont(new Font("TimesNewRoman", Font.BOLD, 30));
+        last.setFont(new Font("TimesNewRoman", Font.BOLD, 24));
+        winner.setFont(new Font("TimesNewRoman", Font.BOLD, 24));
+        last.setForeground(Color.WHITE);
+        winner.setForeground(Color.WHITE);
+
 
         //действия при нажатии на кнопку
         Milan.addActionListener(new ActionListener() {
