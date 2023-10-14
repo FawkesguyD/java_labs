@@ -17,12 +17,12 @@ class MovablePoint implements Movable {
 
     @Override
     public void moveUp() {
-        y--;
+        y++;
     }
 
     @Override
     public void moveDown() {
-        y++;
+        y--;
     }
 
     @Override
