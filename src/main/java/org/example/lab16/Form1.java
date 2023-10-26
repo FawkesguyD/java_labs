@@ -45,7 +45,7 @@ public class Form1 extends JFrame
         panel5.add(label);
         panel5.add(jta1);
         panel5.add(button);
-        panel.setPreferredSize(new Dimension(100,60));
+        panel.setPreferredSize(new Dimension(500,100));
         panel2.setPreferredSize(new Dimension(100,60));
         panel3.setPreferredSize(new Dimension(100,60));
         panel4.setPreferredSize(new Dimension(100,60));

@@ -96,13 +96,13 @@ public class Tester
     public static void main(String[] args)
     {
         Student[] students = new Student[5];
-        students[0]=new Student("Грегори", "Прайз", "Программист", 1, 3 );
-        students[1]=new Student("Бобс", "Шир", "Программист", 4,4 );
-        students[2]=new Student("Владимир", "Смирнов", "Химик", 4, 5);
-        students[3]=new Student("Адам", "Чернов", "Юрист", 2, 6);
-        students[4]=new Student("Дмитрий", "Первый", "Историк", 3,1 );
-        System.out.println("Вид сортировки: ");
-        System.out.println("1 - Имя, 2 - Фамилия, 3 - Специальность, 4 - Курс, 5 - Группа");
+        students[0]=new Student("John", "Smith", "Programmer", 1, 3 );
+        students[1]=new Student("Mary", "Johnson", "Programmer", 4,4 );
+        students[2]=new Student("William", "Brown", "Chemist", 4, 5);
+        students[3]=new Student("Elizabeth", "Davis", "Lawyer", 2, 6);
+        students[4]=new Student("James", "Wilson", "Historian", 3,1 );
+        System.out.println("View of sort: ");
+        System.out.println("1 - name, 2 - surname, 3 - spec, 4 - course, 5 - group");
         Scanner scanner = new Scanner(System.in);
         Comparator<Student> cmp;
         while(true)
@@ -133,14 +133,14 @@ public class Tester
                 cmp = Comparator.comparing(Student::getGroup);
                 break;
             }
-            else System.out.println("Ошибка!");
+            else System.out.println("Error!");
         }
         Tester main = new Tester(cmp, students);
-        System.out.println("Первоначальный список: ");
+        System.out.println("Unsorted list: ");
         main.outArray();
         System.out.println("\n");
         main.quicksort();
-        System.out.println("Отсортированный список: ");
+        System.out.println("Sorted list: ");
         main.outArray();
     }
 }

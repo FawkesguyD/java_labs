@@ -16,7 +16,7 @@ public class Form4 extends JFrame
     double y=0;
     Form4()
     {
-        super("Задание 15-4");
+        super("Calculator");
         super.setBounds(1050, 250, 280, 330);
         super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         super.setBackground(Color.WHITE);

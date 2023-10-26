@@ -3,14 +3,10 @@ package org.example.lab6.ex1;
 public class MovablePoint implements Movable {
     private int x;
     private int y;
-    private int xSpeed;
-    private int ySpeed;
 
-    public MovablePoint(int x, int y, int xSpeed, int ySpeed) {
+    public MovablePoint(int x, int y) {
         this.x = x;
         this.y = y;
-        this.xSpeed = xSpeed;
-        this.ySpeed = ySpeed;
     }
 
     @Override
@@ -18,28 +14,34 @@ public class MovablePoint implements Movable {
         return "MovablePoint{" +
                 "x=" + x +
                 ", y=" + y +
-                ", xSpeed=" + xSpeed +
-                ", ySpeed=" + ySpeed +
                 '}';
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
     }
 
     @Override
     public void moveUp() {
-        this.x++;
+        this.y -=5;
     }
 
     @Override
     public void moveDown() {
-        this.x--;
+        this.y += 5;
     }
 
     @Override
     public void moveLeft() {
-        this.y++;
+        this.x -= 5;
     }
 
     @Override
     public void moveRight() {
-        this.y--;
+        this.x += 5;
     }
 }

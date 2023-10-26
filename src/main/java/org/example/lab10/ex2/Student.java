@@ -27,6 +27,6 @@ public class Student
     public void setGroup(int group) {this.group = group;}
     public String toString()
     {
-        return "Студент: " + " Имя - " + name + ", Фамилия - " + sname + ", Специальность - " + spec + ", Курс - " + kurs + ", Группа - " + group;
+        return "Student: " + " Name - " + name + ", Surname - " + sname + ", Spec - " + spec + ", Course - " + kurs + ", Group - " + group;
     }
 }

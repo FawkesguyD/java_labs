@@ -1,14 +1,9 @@
 package org.example.lab5.ex1;
 
 import javax.swing.*;
-import javax.swing.plaf.ButtonUI;
-import javax.swing.plaf.LabelUI;
-import javax.swing.plaf.metal.MetalButtonUI;
-import javax.swing.plaf.metal.MetalLabelUI;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.time.format.TextStyle;
 
 public class Match implements ActionListener {
     private JPanel panelInfo;
@@ -60,7 +55,7 @@ public class Match implements ActionListener {
         panelInfo.setBackground(Color.DARK_GRAY);
         panelButtons.setBackground(Color.DARK_GRAY);
         result.setForeground(Color.WHITE);
-        result.setFont(new Font("TimesNewRoman", Font.BOLD, 30));
+        result.setFont(new Font("8BIT WONDER(RUS BY LYAJKA)", Font.BOLD, 30));
         last.setFont(new Font("TimesNewRoman", Font.BOLD, 24));
         winner.setFont(new Font("TimesNewRoman", Font.BOLD, 24));
         last.setForeground(Color.WHITE);
@@ -72,7 +67,7 @@ public class Match implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 scoreOfMilan++;
-                result.setText(scoreOfMilan +" X " + scoreOfReal);
+                result.setText(scoreOfMilan + " X " + scoreOfReal);
                 last.setText("Last Scorer: AC Milan");
                 setWinner();
             }
@@ -82,7 +77,7 @@ public class Match implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 scoreOfReal++;
-                result.setText(scoreOfMilan +" X " + scoreOfReal);
+                result.setText(scoreOfMilan + " X " + scoreOfReal);
                 last.setText("Last Scorer: Real Madrid");
                 setWinner();
             }
