@@ -6,7 +6,7 @@ public class main
     {
         print ("I like java!!!");
         System.out.print("Задание 2. Программа возвращающая Ф.И.О: ");
-        Person pers = new Person("Заволокин", "Александр");
+        Person pers = new Person("Гнитецкий", "Даниил");
         System.out.print(pers.toString());
     }
     public static void  print(String text)
