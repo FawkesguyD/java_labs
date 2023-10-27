@@ -95,6 +95,7 @@ public class Match implements ActionListener {
 
 
     public void actionPerformed(ActionEvent e) {
+        setWinner();
     }
     public void setWinner() {
         if (scoreOfMilan > scoreOfReal) {
